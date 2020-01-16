@@ -189,7 +189,6 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		handler = http.NotFoundHandler()
 	}
 
-	fmt.Println("SERVEHTTP THING", match.OnlyMatchedCleanPath)
 	if match.OnlyMatchedCleanPath {
 		// Added 3 lines (Philip Schlump) - It was dropping the query string and #whatever from query.
 		// This matches with fix in go 1.2 r.c. 4 for same problem.  Go Issue:

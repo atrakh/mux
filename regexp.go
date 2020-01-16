@@ -191,7 +191,6 @@ func (r *routeRegexp) Match(req *http.Request, match *RouteMatch) bool {
 	if r.options.useEncodedPath {
 		path = req.URL.EscapedPath()
 	}
-	fmt.Println("IS SKIP CLEAN ENABLED", r.options.skipClean)
 	if !r.options.skipClean {
 		// Only clean the path when needed, and cache the result for later use.
 		if match.CleanPath == "" {
