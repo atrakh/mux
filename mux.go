@@ -114,6 +114,8 @@ func copyRouteConf(r routeConf) routeConf {
 	c.matchers = make([]matcher, len(r.matchers))
 	copy(c.matchers, r.matchers)
 
+	c.skipClean = r.skipClean
+
 	return c
 }
 
